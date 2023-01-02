@@ -16,3 +16,14 @@ body {
     rgba(163, 208, 219, 1) 100%
   );
 }
+
+.email-input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(175, 176, 177);
+
+  border: 6px solid grey;
+  padding: 10px;
+}
