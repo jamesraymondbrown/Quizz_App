@@ -48,6 +48,59 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+// I'll need to move these to their own routes after
+app.get("/register", (req, res) => {
+  const templateVars = {
+    //user: users[req.session.user_id]
+  };
+  // if (req.session.user_id !== undefined) {
+  //   res.redirect("/urls");
+  // }
+  res.render("register", templateVars);
+});
+
+app.post("/register", (req, res) => {
+  const id = generateRandomString();
+  const userEmail = req.body.email;
+  const password = req.body.password;
+  const hashedPassword = bcrypt.hashSync(password, 10);
+  if (userEmail === "" || password === "") {
+    res.status(400).send("Please check that you've inputted a username and password!");
+  } else if (getUserByEmail(req.body.email, users) !== null) {
+    res.status(400).send("That email already has an account registered!");
+  } else {
+    users[id] = {id: id, email: userEmail, password: hashedPassword};
+    console.log("users:", users);
+    req.session.user_id = users[id].id;
+    res.redirect(`/urls`);
+  }
+});
+
+app.get("/login", (req, res) => {
+  const templateVars = {
+    //user: users[req.session.user_id]
+  };
+  // if (req.session.user_id !== undefined) {
+  //   res.redirect("/urls");
+  // }
+  res.render("login", templateVars);
+});
+
+app.post("/login", (req, res) => {
+  const userEmail = req.body.email;
+  const password = req.body.password;
+  const userID = getUserByEmail(userEmail, users);
+  if (getUserByEmail(req.body.email, users) === null) {
+    res.status(403).send("User not found!");
+  } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
+    let loginUserID = getUserByEmail(userEmail, users);
+    req.session.user_id = users[loginUserID].id;
+    res.redirect(`/urls`);
+  } else {
+    res.status(403).send("Incorrect Password!");
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
