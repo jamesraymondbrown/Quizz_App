@@ -74,6 +74,8 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+  margin-right:5vw;
+  margin-left:5vw;
 }
 
 .nav-menu {
@@ -109,6 +111,10 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: black;
+}
+.nav-line {
+  width: 90%;
+  margin-left:5vw;
 }
 
 @media(max-width:768px) {
