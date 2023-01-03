@@ -32,6 +32,8 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const quizRoutes = require('./routes/quiz-router');
+const loginRoutes = require('./routes/login');
+const registerRoutes = require('./routes/register');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -40,11 +42,38 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/quiz', quizRoutes);
+app.use('/login', loginRoutes);
+app.use('/register', registerRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+// app.get("/login", (req, res) => {
+//   const templateVars = {
+//     //user: users[req.session.user_id]
+//   };
+//   // if (req.session.user_id !== undefined) {
+//   //   res.redirect("/urls");
+//   // }
+//   res.render("login", templateVars);
+// });
+
+// app.post("/login", (req, res) => {
+//   const userEmail = req.body.email;
+//   const password = req.body.password;
+//   const userID = getUserByEmail(userEmail, users);
+//   if (getUserByEmail(req.body.email, users) === null) {
+//     res.status(403).send("User not found!");
+//   } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
+//     let loginUserID = getUserByEmail(userEmail, users);
+//     req.session.user_id = users[loginUserID].id;
+//     res.redirect(`/urls`);
+//   } else {
+//     res.status(403).send("Incorrect Password!");
+//   }
+// });
 
 app.get('/', (req, res) => {
   res.render('index');

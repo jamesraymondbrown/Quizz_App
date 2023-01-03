@@ -16,3 +16,40 @@ body {
     rgba(163, 208, 219, 1) 100%
   );
 }
+
+header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  right: 0;
+}
+
+.email-input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(175, 176, 177);
+
+  border: 6px solid grey;
+  padding: 10px;
+}
+
+.register-for-account-message {
+  color: blue;
+  padding: 5px;
+}
+
+@media all and (min-width: 1024px) {
+  .email-input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(175, 176, 177);
+
+    border: 6px solid grey;
+    padding: 10px;
+  }
+
+}
