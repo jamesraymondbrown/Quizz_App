@@ -9,17 +9,17 @@ const express = require('express');
 const router  = express.Router();
 //const userQueries = require('../db/queries/users'); --> connect to the db?
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   const templateVars = {
     //user: users[req.session.user_id]
   };
   // if (req.session.user_id !== undefined) {
   //   res.redirect("/urls");
   // }
-  res.render("login", templateVars);
+  res.render('login', templateVars);
 });
 
-router.post("/login", (req, res) => {
+router.post("/", (req, res) => {
   const userEmail = req.body.email;
   const password = req.body.password;
   const userID = getUserByEmail(userEmail, users);
