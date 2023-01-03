@@ -25,7 +25,7 @@
   <body>
     <%- include('partials/_header') %>
 
-    <h1>Login to your account</h1>
+    <h1 class="email-input-page-title">Login to your account</h1>
 
     <form method="POST" action="/login" class="email-input-box">
       <div class="form-group">
@@ -39,8 +39,9 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
 
-    <a href="/register" class="register-for-account-message">Register for a new account</a>
-
+    <div class="register-for-account-message">
+      <a href="/register" class="register-for-account-message">Register for a new account</a>
+    </div>
 
     <!-- Bootstrap JS -->
     <script
