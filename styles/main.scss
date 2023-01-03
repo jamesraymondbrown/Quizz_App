@@ -17,6 +17,13 @@ body {
   );
 }
 
+header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  right: 0;
+}
+
 .email-input-box {
   display: flex;
   flex-direction: column;

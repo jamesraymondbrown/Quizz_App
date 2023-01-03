@@ -13,7 +13,7 @@ router.get("/login", (req, res) => {
   const templateVars = {
     //user: users[req.session.user_id]
   };
-  // if (req.session.user_id !== undefined) {  --> implement later
+  // if (req.session.user_id !== undefined) {
   //   res.redirect("/urls");
   // }
   res.render("login", templateVars);
@@ -28,7 +28,7 @@ router.post("/login", (req, res) => {
   } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
     let loginUserID = getUserByEmail(userEmail, users);
     req.session.user_id = users[loginUserID].id;
-    res.redirect(`/account`);
+    res.redirect(`/urls`);
   } else {
     res.status(403).send("Incorrect Password!");
   }
