@@ -115,7 +115,11 @@ a {
   width: 90%;
   margin-left:5vw;
 }
-
+#newQuiz{
+  padding: 0.6em 0.7em;
+  background-color: aqua;
+  border-radius: 3px;
+}
 @media(max-width:768px) {
   .hamburger {
     display: block;
@@ -124,7 +128,10 @@ a {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
-
+  #newQuiz{
+    padding: 0;
+    background-color:transparent;
+  }
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
