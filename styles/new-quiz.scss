@@ -14,7 +14,7 @@
   textarea {
     resize: none;
     width: 99%;
-
+    border-width: 2px;
   }
 
   .question-container {
@@ -33,5 +33,23 @@
     padding: 5px;
     border: 2px solid black;
     border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .save-reset {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    text-decoration: none;
+    border: none;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    background-color: aqua;
+    color: black;
+    width: 150px;
+    text-align: center;
   }
 }
