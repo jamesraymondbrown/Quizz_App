@@ -1,13 +1,21 @@
 const express = require('express');
+const quizQueries = require('../db/queries/quiz-queries');
 const router = express.Router();
 
-// GET /quiz
 router.get('/', (req, res) => {
-  res.render('quiz');
+  quizQueries.getQuizzes()
+    .then((quizzes) => {
+      res.json(quizzes);
+    });
 });
 
 // GET /quiz/new
 router.get('/new', (req, res) => {
+  res.render('new-quiz');
+});
+
+// POST /quiz/new
+router.post('/new', (req, res) => {
   res.render('new-quiz');
 });
 
