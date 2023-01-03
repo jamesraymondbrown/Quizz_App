@@ -68,14 +68,13 @@ a {
 }
 
 .navbar {
-
-  min-height: 70px;
+  min-height: 10vh;
+  //min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
   margin-right:5vw;
-  margin-left:5vw;
 }
 
 .nav-menu {
@@ -116,7 +115,11 @@ a {
   width: 90%;
   margin-left:5vw;
 }
-
+#newQuiz{
+  padding: 0.6em 0.7em;
+  background-color: aqua;
+  border-radius: 3px;
+}
 @media(max-width:768px) {
   .hamburger {
     display: block;
@@ -125,7 +128,10 @@ a {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
-
+  #newQuiz{
+    padding: 0;
+    background-color:transparent;
+  }
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -143,7 +149,7 @@ a {
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    background-color:rgba(255,255,255,0.7);
+    background-color:rgba(255,255,255,0.9);
   }
 
   .nav-item {
