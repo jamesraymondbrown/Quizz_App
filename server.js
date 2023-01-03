@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 const registerRoutes = require('./routes/register');
+const quizRoutes = require('./routes/quiz');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -43,7 +44,7 @@ app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
 app.use('/register', registerRoutes);
 // Note: mount other resources here, using the same pattern above
-
+app.use('/quiz', quizRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
