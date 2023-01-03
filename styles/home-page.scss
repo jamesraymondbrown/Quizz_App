@@ -1,0 +1,44 @@
+h1{
+  font-weight:lighter;
+  color:rgb(89, 88, 88);
+  font-size:3rem
+}
+.container {
+display:flex;
+flex-wrap:nowrap;
+}
+
+.home-page-left {
+width:50vw;
+height:90vh;
+//background-color:rgba($color: #e4de97, $alpha: 0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+.home-text-left {
+  padding:4%;
+}
+.home-text-right{
+  text-align:end;
+  margin-top:-50vh;
+  padding:4%;
+}
+.home-page-right {
+width:50vw;
+height:90vh;
+background-color:rgba(233, 151, 80, 0.37);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.join-today-button{
+  background-color: aqua;
+}
+.login-button-home-page{
+background-color:aqua;
+}
+@media(max-width:768px) {
+
+}
