@@ -6,14 +6,15 @@
 
   <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/header.css"/>
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/home-page.css"/>
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -21,14 +22,26 @@
 
 <body>
   <%- include('partials/_header') %>
-
-
+    <div class="container">
+      <div class="home-page-left">
+        <h1 class="home-text-left">Create new private or public quiz.</h1>
+        <div class="home-page-buttons">
+          <a href="#" class="home-page-button">Login</a>
+          <a href="#" class="home-page-button">Join Today</a>
+          <a href="#" class="home-page-button">Create New Quiz</a>
+      </div>
+      </div>
+      <div class="home-page-right">
+        <h1 class="home-text-right">Or play public Quizzes</h1>
+        <ul class="public-quiz-list">
+        <a href="#" class="public-quiz-button">Public quiz 1</a>
+        <a href="#" class="public-quiz-button">Public quiz 2</a>
+        <a href="#" class="public-quiz-button">Public quiz 3</a>
+        <a href="#" class="public-quiz-button">Public quiz 4</a>
+        <a href="#" class="public-quiz-button">Public quiz 5</a>
+        </ul>
+      </div>
+    </div>
 </body>
-<div class="home-page-left">
 
-</div>
-<div class="home-page-right">
-
-
-</div>
 </html>
