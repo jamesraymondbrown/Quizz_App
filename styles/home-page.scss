@@ -22,7 +22,7 @@ flex-direction:column;
 }
 .home-text-right{
   text-align:end;
-  margin-top:-50vh;
+  //margin-top:-50vh;
   padding:4%;
 }
 .home-page-right {
@@ -32,12 +32,36 @@ background-color:rgba(233, 151, 80, 0.37);
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
 }
-.join-today-button{
-  background-color: aqua;
+
+.public-quiz-button{
+  display:flex;
+  padding:0.2em 2.6em;
+  font-size:2em;
+  font-weight:lighter;
+  color:rgb(89, 88, 88);
+  background-color: white;
+  gap:100px;
+  margin: 8px;
+  border-radius:4px;
 }
-.login-button-home-page{
+.public-quiz-button:hover{
+  cursor:pointer;
+  box-shadow: 1px 1px 10px rgb(183, 182, 182);
+}
+.home-page-buttons{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.home-page-button{
 background-color:aqua;
+padding: 0.8em 2em;
+border-radius: 30px;
+color: darkslategrey;
+font-size: larger;
+margin: 5px;
 }
 @media(max-width:768px) {
 
