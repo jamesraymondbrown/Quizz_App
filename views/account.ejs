@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+
+    <title>Account Page</title>
+
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+    <h3 id="account-page-title">
+      Welcome, *Username*
+    </h3>
+      <table>
+        <tbody id="account-table-body">
+          <tr class="account-table-row">
+            <th class="account-table-text-header">Create a new quiz:</th>
+            <th><a href="/new-quiz"><button class="btn btn-primary btn-sm btn-nolist">Click here to create a new quiz</button></a></th>
+          </tr>
+          <tr class="account-table-row">
+            <th class="account-table-text-header">Your created quizzes:</th>
+            <th class="account-table-link-list"><a href="/new-quiz">Add JS to list quizzes with their user id</a></th>
+            <th><a href="/all-quizzes"><button class="btn btn-primary btn-sm">Button to view all quizzes</button></a></th>
+          </tr>
+          <tr class="account-table-row">
+            <th class="account-table-text-header">Your quizz results:</th>
+            <th class="account-table-link-list"><a href="/new-quiz">Add JS to list quiz results</a></th>
+            <th><a href="/all-quizzes"><button class="btn btn-primary btn-sm">Button to view all quiz results</button></a></th>
+          </tr>
+          <tr class="account-table-row">
+            <th class="account-table-text-header">View public quizzes</th>
+            <th><a href="/all-quizzes"><button class="btn btn-primary btn-sm btn-nolist">Button to view all quizzes</button></a></th>
+          </tr>
+
+          <!-- can copy from tinyapp account page to find out how to display all their created quizzes (it's similar to displaying their created links) -->
+
+        </tbody>
+      </table>
+    </main>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
