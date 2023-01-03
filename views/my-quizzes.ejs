@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/header.css" />
 
-    <title>Public Quizzes Page</title>
+    <title>My Quizzes Page</title>
 
     <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -23,12 +23,13 @@
   <body>
     <%- include('partials/_header') %>
     <main style="margin: 1em;">
-      <h3>Public quizzes</h3>
+      <h3>My quizzes</h3>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">Quiz Name</th>
             <th scope="col">My quiz result</th>
+            <th scope="col">Edit quiz</th>
             <th scope="col">Take quiz</th>
           </tr>
         </thead>
@@ -38,6 +39,11 @@
             <tr>
               <td>js to pull quiz name</td>
               <td>js to pull my quiz results</td>
+              <td>
+                <a href="/urls/useJSToFetchQuizEditPage">
+                  <button type="submit" class="btn btn-primary">Edit quiz</button>
+                </a>
+              </td>
               <td>
                 <a href="/urls/useJSToFetchQuizURL">
                   <button type="submit" class="btn btn-primary">Take quiz</button>
