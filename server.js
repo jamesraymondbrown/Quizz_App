@@ -48,7 +48,7 @@ const publicQuizzesRoutes = require('./routes/public-quizzes');
 const myQuizzesRoutes = require('./routes/my-quizzes');
 const quizResultsRoutes = require('./routes/quiz-results');
 
-const quizRoutes = require('./routes/quiz');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
