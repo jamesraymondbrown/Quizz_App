@@ -34,9 +34,9 @@
         </thead>
         <tbody>
           <!-- Make a for loop that fetches the quiz info and displays them. Use tinyapp's urls_index for guidance. Like this: https://share.getcloudapp.com/JruynGqd -->
-
+          <% for (const quiz of quizzes) { %>
             <tr>
-              <td>js to pull quiz name</td>
+              <td><%= quiz.title %></td>
               <td>js to pull my quiz results</td>
               <td>
                 <a href="/urls/useJSToFetchQuizURL">
@@ -44,6 +44,7 @@
                 </a>
               </td>
             </tr>
+          <% } %>
         </tbody>
       </table>
     </main>

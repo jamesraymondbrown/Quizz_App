@@ -7,9 +7,20 @@
 
 const express = require('express');
 const router  = express.Router();
+const db = require('../db/connection');
 
 router.get('/', (req, res) => {
-  res.render('public-quizzes');
+  db.query('SELECT * FROM quizzes;')
+    .then((response) => {
+      const quizzes = response.rows;
+      console.log('quizObject Log', quizzes);
+      // res.json(quizObject);
+      res.render('public-quizzes', {quizzes})
+    });
+
+    // res.render({template:'index', { user : user}}
+
+  // res.render('public-quizzes');
 });
 
 module.exports = router;
