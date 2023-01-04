@@ -1,0 +1,10 @@
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (1, 'Question 1', 'Answer 1', 'Option 1-1', 'Option 1-2', 'Option 1-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (2, 'Question 2', 'Answer 2', 'Option 2-1', 'Option 2-2', 'Option 2-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (3, 'Question 3', 'Answer 3', 'Option 3-1', 'Option 3-2', 'Option 3-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (4, 'Question 4', 'Answer 4', 'Option 4-1', 'Option 4-2', 'Option 4-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (5, 'Question 5', 'Answer 5', 'Option 5-1', 'Option 5-2', 'Option 5-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (6, 'Question 6', 'Answer 6', 'Option 6-1', 'Option 6-2', 'Option 6-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (7, 'Question 7', 'Answer 7', 'Option 7-1', 'Option 7-2', 'Option 7-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (8, 'Question 8', 'Answer 8', 'Option 8-1', 'Option 8-2', 'Option 8-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (9, 'Question 9', 'Answer 9', 'Option 9-1', 'Option 9-2', 'Option 9-3', 1);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (10, 'Question 10', 'Answer 10', 'Option 10-1', 'Option 10-2', 'Option 10-3', 1);
