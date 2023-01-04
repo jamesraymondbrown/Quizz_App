@@ -36,8 +36,12 @@
           <!-- Make a for loop that fetches the quiz info and displays them. Use tinyapp's urls_index for guidance. Like this: https://share.getcloudapp.com/JruynGqd -->
           <% for (const quiz of quizzes) { %>
             <tr>
-              <td><%= quiz.title %></td>
-              <td>js to pull my quiz results</td>
+              <td><%= quiz.name %></td>
+              <td><% if (quiz.score !== null && quiz.score !== undefined) { %>
+                <%= quiz.score %>
+                <% } else {%>
+                Quiz not taken yet
+                <% }; %> </td>
               <td>
                 <a href="/urls/useJSToFetchQuizURL">
                   <button type="submit" class="btn btn-primary">Take quiz</button>
