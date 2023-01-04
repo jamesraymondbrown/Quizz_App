@@ -1,6 +1,9 @@
+// Functions to help with james' login and register post requests.
+// I'll come back and integrated these later if I have time, to clean up the code in our routes files
+
 const getUserWithEmail = function(email) {
 
-  return pool
+  return db
   .query(`SELECT * FROM users WHERE email = $1;`, [email])
   .then((result) => {
     console.log(result.rows);
@@ -20,7 +23,8 @@ exports.getUserWithEmail = getUserWithEmail;
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithId = function(id) {
-  return pool
+
+  return db
   .query(`SELECT * FROM users WHERE users.id = $1;`, [id])
   .then((result) => {
     console.log(result.rows);
@@ -41,7 +45,7 @@ exports.getUserWithId = getUserWithId;
  */
 const addUser =  function(input) {
 
-  return pool
+  return db
   .query(`INSERT INTO users (name, email, password)
   VALUES ($1, $2, $3)
   RETURNING *;`, [input.name, input.email, input.password])
