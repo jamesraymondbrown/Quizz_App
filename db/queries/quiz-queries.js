@@ -23,7 +23,7 @@ const addQuestion = (question) => {
 };
 
 const getQuizByID = (id) => {
-  return db.query('SELECT * from quizzes JOIN questions ON quizzes.id = questions.quiz_id WHERE quizzes.id = $1;', [id])
+  return db.query('SELECT * from quizzes JOIN questions ON quizzes.id = questions.quiz_id WHERE quizzes.id = $1 ORDER BY qnumber;', [id])
     .then((quiz) => {
       return quiz.rows;
     });
