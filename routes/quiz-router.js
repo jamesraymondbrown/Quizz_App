@@ -37,7 +37,6 @@ router.post('/new', (req, res) => {
         quizQueries.addQuestion(questionData)
       }
     });
-
     res.render('/');
 });
 
