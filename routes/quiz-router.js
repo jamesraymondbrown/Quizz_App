@@ -40,4 +40,13 @@ router.post('/new', (req, res) => {
     res.render('/');
 });
 
+// GET /quiz/new
+router.get('/edit/:id', (req, res) => {
+  quizQueries.getQuizByID(req.params.id)
+    .then((quiz) => {
+      const templateVars = { quiz };
+      res.render('edit-quiz', templateVars);
+    });
+});
+
 module.exports = router;

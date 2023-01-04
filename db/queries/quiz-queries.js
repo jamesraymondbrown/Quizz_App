@@ -1,3 +1,4 @@
+const { realpathSync } = require('fs');
 const db = require('../connection');
 
 const getQuizzes = () => {
@@ -21,8 +22,16 @@ const addQuestion = (question) => {
     });
 };
 
+const getQuizByID = (id) => {
+  return db.query('SELECT * from quizzes JOIN questions ON quizzes.id = questions.quiz_id WHERE quizzes.id = $1;', [id])
+    .then((quiz) => {
+      return quiz.rows;
+    });
+};
+
 module.exports = {
   getQuizzes,
   addQuiz,
-  addQuestion
+  addQuestion,
+  getQuizByID
 };
