@@ -64,6 +64,26 @@ body {
       width: 150px;
       text-align: center;
     }
+
+    .buttons:hover {
+      border-color: dodgerblue;
+      box-shadow: 0 0 8px 0 dodgerblue;
+    }
+
+    .input-text {
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin: 3px;
+      outline: none;
+      padding: 8px;
+      box-sizing: border-box;
+      transition: .3s;
+    }
+
+    .input-text:focus {
+      border-color: dodgerblue;
+      box-shadow: 0 0 8px 0 dodgerblue;
+    }
   }
 }
 
