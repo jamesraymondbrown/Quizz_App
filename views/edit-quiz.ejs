@@ -5,6 +5,7 @@
   <title>Quizzes</title>
 
   <link rel="stylesheet" href="/styles/new-quiz.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,8 @@
 </head>
 
 <body>
+  <%- include('partials/_header') %>
+
   <div class="body-container">
     <h1>Editing <%= quiz[0].name %></h1>
 
