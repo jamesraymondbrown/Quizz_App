@@ -43,7 +43,6 @@ const getUserWithEmail = function(email) {
 const login =  function(email, password) {
     return getUserWithEmail(email)
     .then(user => {
-      // console.log('userResponseLog', user)
       if (bcrypt.compareSync(password, user.password)) {
         return user;
     }
@@ -61,7 +60,6 @@ router.post("/", (req, res) => {
         return;
       }
       req.session.userId = user.id;
-      // res.send({user: {name: user.name, email: user.email, id: user.id}});
       res.redirect('account')
     })
     .catch(e => {
