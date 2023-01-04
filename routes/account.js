@@ -9,6 +9,14 @@ const express = require('express');
 const router  = express.Router();
 //const userQueries = require('../db/queries/users'); --> connect to the db?
 
+router.use((req, res, next) => {
+  if (!req.session.userId) {
+    return res.redirect('/login');
+  }
+
+  next();
+})
+
 router.get("/", (req, res) => {
   const templateVars = {
     //user: users[req.session.user_id]

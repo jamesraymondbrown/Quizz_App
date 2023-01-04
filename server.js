@@ -39,10 +39,10 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const quizRoutes = require('./routes/quiz-router');
 const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout');
 const registerRoutes = require('./routes/register');
 const accountRoutes = require('./routes/account');
 const publicQuizzesRoutes = require('./routes/public-quizzes');
-const myQuizzesRoutes = require('./routes/my-quizzes');
 const quizResultsRoutes = require('./routes/quiz-results');
 
 // Mount all resource routes
@@ -53,10 +53,10 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
 app.use('/register', registerRoutes);
 app.use('/account', accountRoutes);
 app.use('/public-quizzes', publicQuizzesRoutes);
-app.use('/my-quizzes', myQuizzesRoutes);
 app.use('/quiz-results', quizResultsRoutes);
 // Note: mount other resources here, using the same pattern above
 
