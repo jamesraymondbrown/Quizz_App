@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Bootstrap CSS -->
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/header.css" />
 
-    <title>Login Page</title>
+    <title>Public Quizzes Page</title>
 
     <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -21,28 +20,38 @@
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
   </head>
-
   <body>
     <%- include('partials/_header') %>
-
-    <h1 class="email-input-page-title">Login to your account</h1>
-
-    <form method="POST" action="/login" class="email-input-box">
-      <div class="form-group">
-        <label for="emailInput">Email address</label>
-        <input type="email" name="email" id="emailInput" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="passwordInput">Password</label>
-        <input type="password" name="password" id="passwordInput" placeholder="Enter password">
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-
-    <div class="register-for-account-message">
-      <a href="/register" class="register-for-account-message">Register for a new account</a>
-    </div>
-
+    <main style="margin: 1em;">
+      <h3>Public quizzes</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Quiz Name</th>
+            <th scope="col">My quiz result</th>
+            <th scope="col">Take quiz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Make a for loop that fetches the quiz info and displays them. Use tinyapp's urls_index for guidance. Like this: https://share.getcloudapp.com/JruynGqd -->
+          <% for (const quiz of quizzes) { %>
+            <tr>
+              <td><%= quiz.name %></td>
+              <td><% if (quiz.score !== null && quiz.score !== undefined) { %>
+                <%= quiz.score %>
+                <% } else {%>
+                Quiz not taken yet
+                <% }; %> </td>
+              <td>
+                <a href="/urls/useJSToFetchQuizURL">
+                  <button type="submit" class="btn btn-primary">Take quiz</button>
+                </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </main>
     <!-- Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

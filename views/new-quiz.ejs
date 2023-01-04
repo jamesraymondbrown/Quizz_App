@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quizzes</title>
+
+  <link rel="stylesheet" href="/styles/new-quiz.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <div class="body-container">
+    <h1>Create A New Quiz</h1>
+
+    <form method="post" action="/quiz/new">
+      <label for="quiz-name">Quiz Name:</label>
+      <input type="text" name="quiz-name" placeholder="Type the quiz name" required></textarea>
+      <br>
+      <label for="description">Short Description:</label>
+      <textarea name="description" id="description" placeholder="Type a short description" required></textarea>
+
+      <h3>Questions:</h3>
+      <div class="question-container">
+        <div class="question">
+          <label for="description">Question 1</label>
+          <textarea name="q1-description" id="q1-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q1-answer">Correct Answer:</label>
+          <input type="text" name="q1-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q1-answer">Options:</label>
+          <input type="text" name="q1-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q1-answer">Options:</label>
+            <input type="text" name="q1-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q1-answer">Options:</label>
+            <input type="text" name="q1-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 2</label>
+          <textarea name="q2-description" id="q2-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q2-answer">Correct Answer:</label>
+          <input type="text" name="q2-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q2-answer">Options:</label>
+          <input type="text" name="q2-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q2-answer">Options:</label>
+            <input type="text" name="q2-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q2-answer">Options:</label>
+            <input type="text" name="q2-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 3</label>
+          <textarea name="q3-description" id="q3-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q3-answer">Correct Answer:</label>
+          <input type="text" name="q3-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q3-answer">Options:</label>
+          <input type="text" name="q3-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q3-answer">Options:</label>
+            <input type="text" name="q3-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q3-answer">Options:</label>
+            <input type="text" name="q3-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 4</label>
+          <textarea name="q4-description" id="q4-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q4-answer">Correct Answer:</label>
+          <input type="text" name="q4-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q4-answer">Options:</label>
+          <input type="text" name="q4-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q4-answer">Options:</label>
+            <input type="text" name="q4-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q4-answer">Options:</label>
+            <input type="text" name="q4-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 5</label>
+          <textarea name="q5-description" id="q5-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q5-answer">Correct Answer:</label>
+          <input type="text" name="q5-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q5-answer">Options:</label>
+          <input type="text" name="q5-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q5-answer">Options:</label>
+            <input type="text" name="q5-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q5-answer">Options:</label>
+            <input type="text" name="q5-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 6</label>
+          <textarea name="q6-description" id="q6-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q6-answer">Correct Answer:</label>
+          <input type="text" name="q6-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q6-answer">Options:</label>
+          <input type="text" name="q6-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q6-answer">Options:</label>
+            <input type="text" name="q6-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q6-answer">Options:</label>
+            <input type="text" name="q6-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 7</label>
+          <textarea name="q7-description" id="q7-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q7-answer">Correct Answer:</label>
+          <input type="text" name="q7-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q7-answer">Options:</label>
+          <input type="text" name="q7-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q7-answer">Options:</label>
+            <input type="text" name="q7-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q7-answer">Options:</label>
+            <input type="text" name="q7-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 8</label>
+          <textarea name="q8-description" id="q8-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q8-answer">Correct Answer:</label>
+          <input type="text" name="q8-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q8-answer">Options:</label>
+          <input type="text" name="q8-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q8-answer">Options:</label>
+            <input type="text" name="q8-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q8-answer">Options:</label>
+            <input type="text" name="q8-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 9</label>
+          <textarea name="q9-description" id="q9-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q9-answer">Correct Answer:</label>
+          <input type="text" name="q9-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q9-answer">Options:</label>
+          <input type="text" name="q9-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q9-answer">Options:</label>
+            <input type="text" name="q9-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q9-answer">Options:</label>
+            <input type="text" name="q9-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="description">Question 10</label>
+          <textarea name="q10-description" id="q10-description" placeholder="Type a question" required></textarea>
+          <br>
+          <label for="q10-answer">Correct Answer:</label>
+          <input type="text" name="q10-answer" placeholder="Correct Answer" required></textarea>
+          <label for="q10-answer">Options:</label>
+          <input type="text" name="q10-option1" placeholder="Incorrect options" required></textarea>
+          <div>
+            <label for="q10-answer">Options:</label>
+            <input type="text" name="q10-option2" placeholder="Incorrect options" required></textarea>
+            <label for="q10-answer">Options:</label>
+            <input type="text" name="q10-option3" placeholder="Incorrect options" required></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="save-reset">
+        <a class="buttons" href="/">Back to Homepage</a>
+        <div>
+          <button class="buttons" type="reset" id="clear">Clear</button>
+          <button class="buttons" type="submit" id="button">Save Quiz</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</body>
+
+</html>
