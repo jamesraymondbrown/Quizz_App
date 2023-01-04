@@ -16,7 +16,7 @@ const addQuiz = (quiz) => {
 };
 
 const addQuestion = (question) => {
-  return db.query('INSERT INTO questions (question, correct_answer, option1, option2, option3, quiz_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;', [question.name, question.correct, question.option1, question.option2, question.option3, question.quizId])
+  return db.query('INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [question.qNumber, question.name, question.correct, question.option1, question.option2, question.option3, question.quizId])
     .then((response) => {
       return response.rows[0];
     });

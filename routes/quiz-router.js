@@ -27,6 +27,7 @@ router.post('/new', (req, res) => {
     .then((quiz_id) => {
       for (let x = 1; x <= 10; x++) {
         const questionData = {
+          qNumber: x,
           name: req.body[`q${x}-description`],
           correct: req.body[`q${x}-answer`],
           option1: req.body[`q${x}-option1`],
@@ -37,7 +38,7 @@ router.post('/new', (req, res) => {
         quizQueries.addQuestion(questionData)
       }
     });
-    res.render('/');
+    res.render('index');
 });
 
 // GET /quiz/new
