@@ -32,17 +32,25 @@
             <%} else if(user){%>
               <h1 class="home-text-left">Create new private or public quiz.</h1>
               <div class="home-page-buttons">
-                <a href="#" class="home-page-button">Create New Quiz</a>
+                <a href="/quiz/new" class="home-page-button">Create New Quiz</a>
                 <%}%>
               </div>
           </div>
           <div class="home-page-right">
             <h1 class="home-text-right">Or play public Quizzes</h1>
             <div class="public-quizzes">
+              <a href="#">
               <div href="#" class="right-button"><%=quiz[0].quiz_name%></div>
+              </a>
+              <a href="#">
               <div href="#" class="right-button"><%=quiz[1].quiz_name%></div>
+              </a>
+              <a href="#">
               <div href="#" class="right-button"><%=quiz[2].quiz_name%></div>
-              <div href="/quiz/public" class="right-button">View all</div>
+              </a>
+              <a href="/quiz/public">
+              <div class="right-button">View all</div>
+              </a>
             </div>
           </div>
       </div>
