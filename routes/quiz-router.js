@@ -49,13 +49,14 @@ router.post('/new', (req, res) => {
         quizQueries.addQuestion(questionData)
       }
     });
-  res.redirect('/');
+  res.redirect('/account');
 });
 
 // GET /quiz/edit/:id
 router.get('/edit/:id', (req, res) => {
   quizQueries.getQuizByID(req.params.id)
     .then((quiz) => {
+      console.log(quiz);
       const templateVars = { quiz };
       res.render('edit-quiz', templateVars);
     });
@@ -91,7 +92,7 @@ router.post('/edit/:id', (req, res) => {
     type: req.body['type'],
     id: req.params.id
   };
-  console.log('edit in quiz router', quizData);
+
   quizQueries.editQuiz(quizData)
     .then((quiz) => {
       return quiz.id;
@@ -111,7 +112,7 @@ router.post('/edit/:id', (req, res) => {
         quizQueries.editQuestion(questionData);
       }
     });
-  res.redirect('/');
+  res.redirect('/account');
 });
 
 module.exports = router;

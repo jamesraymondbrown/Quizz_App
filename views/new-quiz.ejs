@@ -30,9 +30,9 @@
         <textarea class="input-text" name="description" id="description" placeholder="Type a short description"
           required></textarea>
         <span>Please select the quiz type:</span>
-        <input type="radio" id="public" name="type" value="Public">
+        <input type="radio" id="public" name="type" value="False">
         <label for="public">Public</label>
-        <input type="radio" id="private" name="type" value="Private">
+        <input type="radio" id="private" name="type" value="True">
         <label for="private">Private</label>
 
         <h3>Questions:</h3>
@@ -125,7 +125,7 @@
           <div class="question">
             <label for="description">Question 6</label>
             <textarea class="input-text" name="q6-description" id="q6-description" placeholder="Type a question"
-              required />
+              required></textarea>
             <br>
             <label for="q6-answer">Correct Answer:</label>
             <input type="text" class="input-text" name="q6-answer" placeholder="Correct Answer" required />

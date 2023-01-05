@@ -31,15 +31,15 @@
       <textarea class="input-text" name="description" id="description" placeholder="Type a short description" required><%= quiz[0].description %></textarea>
 
       <span>Please select the quiz type:</span>
-      <% if(quiz[0].type === 'Public') { %>
-        <input type="radio" id="public" name="type" value="Public" checked>
+      <% if(quiz[0].private === false) { %>
+        <input type="radio" id="public" name="type" value="False" checked>
         <label for="public">Public</label>
-        <input type="radio" id="private" name="type" value="Private">
+        <input type="radio" id="private" name="type" value="True">
         <label for="private">Private</label>
       <% } else { %>
-        <input type="radio" id="public" name="type" value="Public">
+        <input type="radio" id="public" name="type" value="False">
         <label for="public">Public</label>
-        <input type="radio" id="private" name="type" value="Private" checked>
+        <input type="radio" id="private" name="type" value="True" checked>
         <label for="private">Private</label>
       <% } %>
 
