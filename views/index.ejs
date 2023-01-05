@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/home-page.css"/>
+  <link rel="stylesheet" href="/styles/home-page.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -25,26 +25,26 @@
     <div class="container">
       <div class="home-page-left">
         <% if(!user){%>
-        <h1 class="home-text-left">Login to create quizzes</h1>
-        <div class="home-page-buttons">
-          <a href="#" class="home-page-button">Login</a>
-          <a href="#" class="home-page-button">Register</a>
-          <%} else if(user){%>
-          <h1 class="home-text-left">Create new private or public quiz.</h1>
-        <div class="home-page-buttons">
-          <a href="#" class="home-page-button">Create New Quiz</a>
-          <%}%>
-      </div>
-      </div>
-      <div class="home-page-right">
-        <h1 class="home-text-right">Or play public Quizzes</h1>
-        <ul class="public-quiz-list">
-        <a href="#" class="public-quiz-button">Public quiz 1</a>
-        <a href="#" class="public-quiz-button">Public quiz 2</a>
-        <a href="#" class="public-quiz-button">Public quiz 3</a>
-        <a href="#" class="public-quiz-button">Public quiz 4</a>
-        <a href="#" class="public-quiz-button">Public quiz 5</a>
-        </ul>
+          <h1 class="home-text-left">Login to create quizzes</h1>
+          <div class="home-page-buttons">
+            <a href="/login" class="home-page-button">Login</a>
+            <a href="/register" class="home-page-button">Register</a>
+            <%} else if(user){%>
+              <h1 class="home-text-left">Create new private or public quiz.</h1>
+              <div class="home-page-buttons">
+                <a href="#" class="home-page-button">Create New Quiz</a>
+                <%}%>
+              </div>
+          </div>
+          <div class="home-page-right">
+            <h1 class="home-text-right">Or play public Quizzes</h1>
+            <div class="public-quizzes">
+              <div href="#" class="right-button">Star Wars Prequels</div>
+              <div href="#" class="right-button">Politics</div>
+              <div href="#" class="right-button">Russia</div>
+              <div href="/public-quizzes" class="right-button">View all</div>
+            </div>
+          </div>
       </div>
     </div>
 </body>
