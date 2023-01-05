@@ -124,7 +124,6 @@ router.post('/edit/:id', (req, res) => {
           option3: req.body[`q${x}-option3`],
           quizId: quiz_id
         };
-        console.log('edit in quiz router', questionData);
         quizQueries.editQuestion(questionData);
       }
     })
