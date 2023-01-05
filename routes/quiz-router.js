@@ -26,7 +26,9 @@ router.get('/new', (req, res) => {
 router.post('/new', (req, res) => {
   const quizData = {
     name: req.body['quiz-name'],
-    description: req.body['description']
+    description: req.body['description'],
+    type: req.body['type'],
+    user: req.session.userId
   };
   quizQueries.addQuiz(quizData)
     .then((quiz) => {
@@ -46,7 +48,7 @@ router.post('/new', (req, res) => {
         quizQueries.addQuestion(questionData)
       }
     });
-    res.redirect('/');
+  res.redirect('/');
 });
 
 // GET /quiz/edit/:id
@@ -63,9 +65,10 @@ router.post('/edit/:id', (req, res) => {
   const quizData = {
     name: req.body['quiz-name'],
     description: req.body['description'],
+    type: req.body['type'],
     id: req.params.id
   };
-
+  console.log('edit in quiz router', quizData);
   quizQueries.editQuiz(quizData)
     .then((quiz) => {
       return quiz.id;
@@ -81,10 +84,11 @@ router.post('/edit/:id', (req, res) => {
           option3: req.body[`q${x}-option3`],
           quizId: quiz_id
         };
+        console.log('edit in quiz router', questionData);
         quizQueries.editQuestion(questionData);
       }
     });
-    res.redirect('/');
+  res.redirect('/');
 });
 
 module.exports = router;
