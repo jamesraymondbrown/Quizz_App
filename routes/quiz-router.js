@@ -49,7 +49,7 @@ router.post('/new', (req, res) => {
         quizQueries.addQuestion(questionData)
       }
     });
-  res.redirect('/');
+  res.redirect('/account');
 });
 
 // GET /quiz/edit/:id
@@ -112,7 +112,7 @@ router.post('/edit/:id', (req, res) => {
         quizQueries.editQuestion(questionData);
       }
     });
-  res.redirect('/');
+  res.redirect('/account');
 });
 
 module.exports = router;
