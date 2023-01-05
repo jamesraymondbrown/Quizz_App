@@ -9,7 +9,8 @@ const getQuizzes = () => {
 };
 
 const addQuiz = (quiz) => {
-  return db.query('INSERT INTO quizzes (name, description) VALUES ($1, $2) RETURNING *;', [quiz.name, quiz.description])
+  console.log('inside quiz queries', quiz)
+  return db.query('INSERT INTO quizzes (name, description, type, user_id) VALUES ($1, $2, $3, $4) RETURNING *;', [quiz.name, quiz.description, quiz.type, quiz.user])
     .then((response) => {
       return response.rows[0];
     });
@@ -30,13 +31,15 @@ const getQuizByID = (id) => {
 };
 
 const editQuiz = (quiz) => {
-  return db.query('UPDATE quizzes SET name = $1, description = $2 WHERE id = $3 RETURNING *;', [quiz.name, quiz.description, quiz.id])
+  console.log('edit in quiz queries');
+  return db.query('UPDATE quizzes SET name = $1, description = $2, type = $3 WHERE id = $4 RETURNING *;', [quiz.name, quiz.description, quiz.type, quiz.id])
     .then((response) => {
       return response.rows[0];
     });
 };
 
 const editQuestion = (question) => {
+  console.log('edit in quiz queries');
   return db.query('UPDATE questions SET question = $1, correct_answer = $2, option1 = $3, option2 = $4, option3 = $5 WHERE quiz_id = $6 AND qnumber = $7;', [question.name, question.correct, question.option1, question.option2, question.option3, question.quizId, question.qNumber])
     .then((response) => {
       return response.rows[0];
