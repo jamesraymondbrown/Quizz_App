@@ -1,6 +1,7 @@
 const express = require('express');
 const quizQueries = require('../db/queries/quiz-queries');
 const router = express.Router();
+const db = require('../db/connection');
 
 router.get('/', (req, res) => {
   quizQueries.getQuizzes()
@@ -47,6 +48,15 @@ router.get('/edit/:id', (req, res) => {
     .then((quiz) => {
       const templateVars = { quiz };
       res.render('edit-quiz', templateVars);
+    });
+});
+
+// GET /quiz/public
+router.get('/public', (req, res) => {
+  db.query('SELECT * FROM quizzes;')
+    .then((response) => {
+      const quizzes = response.rows;
+      res.render('public-quizzes', {quizzes})
     });
 });
 

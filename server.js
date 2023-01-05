@@ -45,7 +45,6 @@ const quizTakerRoutes = require('./routes/quiz-taker');
 
 
 const accountRoutes = require('./routes/account');
-const publicQuizzesRoutes = require('./routes/public-quizzes');
 const quizResultsRoutes = require('./routes/quiz-results');
 
 
@@ -61,7 +60,6 @@ app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
 app.use('/register', registerRoutes);
 app.use('/account', accountRoutes);
-app.use('/public-quizzes', publicQuizzesRoutes);
 app.use('/quiz-results', quizResultsRoutes);
 // Note: mount other resources here, using the same pattern above
 app.use('/quiztaker', quizTakerRoutes);
