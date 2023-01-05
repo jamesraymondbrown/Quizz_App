@@ -10,6 +10,10 @@ const router  = express.Router();
 
 router.get('/', (req, res) => {
   res.render('users');
-}); 
+});
+
+router.get('/my-quizzes', (req, res) => {
+  res.render('my-quizzes');
+});
 
 module.exports = router;
