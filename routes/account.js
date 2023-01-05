@@ -26,19 +26,5 @@ router.get("/", (req, res) => {
   res.render('account', templateVars);
 });
 
-// router.post("/", (req, res) => {
-//   const userEmail = req.body.email;
-//   const password = req.body.password;
-//   const userID = getUserByEmail(userEmail, users);
-//   if (getUserByEmail(req.body.email, users) === null) {
-//     res.status(403).send("User not found!");
-//   } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
-//     let loginUserID = getUserByEmail(userEmail, users);
-//     req.session.user_id = users[loginUserID].id;
-//     res.redirect(`/urls`);
-//   } else {
-//     res.status(403).send("Incorrect Password!");
-//   }
-// });
 
 module.exports = router;

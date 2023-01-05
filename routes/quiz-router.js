@@ -53,7 +53,7 @@ router.get('/edit/:id', (req, res) => {
 
 // GET /quiz/public
 router.get('/public', (req, res) => {
-  db.query('SELECT * FROM quizzes;')
+  db.query('SELECT * FROM quizzes WHERE private = FALSE;')
     .then((response) => {
       const quizzes = response.rows;
       res.render('public-quizzes', {quizzes})

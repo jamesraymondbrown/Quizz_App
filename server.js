@@ -31,6 +31,10 @@ app.use(cookieSession({
   name: 'session',
   keys: ['key1']
 }));
+app.use(function(req, res, next) {
+  res.locals.user = req.session.userId;
+  next();
+});
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
