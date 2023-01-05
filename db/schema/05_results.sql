@@ -1,6 +1,0 @@
--- DROP TABLE IF EXISTS results CASCADE;
--- CREATE TABLE results (
---   id SERIAL PRIMARY KEY NOT NULL,
---   user_id INTEGER REFERENCES users(id) NOT NULL,
---   quiz_id INTEGER REFERENCES quizzes(id) NOT NULL
--- );
