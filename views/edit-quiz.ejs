@@ -25,7 +25,7 @@
 
     <form method="post">
       <label for="quiz-name">Quiz Name:</label>
-      <input type="text" class="input-text" name="quiz-name" placeholder="Type the quiz name" required value="<%= quiz[0].name %>"/>
+      <input type="text" class="input-text input" name="quiz-name" placeholder="Type the quiz name" required value="<%= quiz[0].name %>"/>
       <br>
       <label for="description">Short Description:</label>
       <textarea class="input-text" name="description" id="description" placeholder="Type a short description" required><%= quiz[0].description %></textarea>
@@ -50,14 +50,14 @@
           <textarea class="input-text" name="q1-description" id="q1-description" placeholder="Type a question" required><%= quiz[0].question %></textarea>
           <br>
           <label for="q1-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q1-answer" placeholder="Correct Answer" required value="<%= quiz[0].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q1-answer" placeholder="Correct Answer" required value="<%= quiz[0].correct_answer %>"/>
           <label for="q1-answer">Options:</label>
-          <input type="text" class="input-text" name="q1-option1" placeholder="Incorrect options" required value="<%= quiz[0].option1 %>"/>
+          <input type="text" class="input-text input" name="q1-option1" placeholder="Incorrect options" required value="<%= quiz[0].option1 %>"/>
           <div>
             <label for="q1-answer">Options:</label>
-            <input type="text" class="input-text" name="q1-option2" placeholder="Incorrect options" required value="<%= quiz[0].option2 %>"/>
+            <input type="text" class="input-text input" name="q1-option2" placeholder="Incorrect options" required value="<%= quiz[0].option2 %>"/>
             <label for="q1-answer">Options:</label>
-            <input type="text" class="input-text" name="q1-option3" placeholder="Incorrect options" required value="<%= quiz[0].option3 %>"/>
+            <input type="text" class="input-text input" name="q1-option3" placeholder="Incorrect options" required value="<%= quiz[0].option3 %>"/>
           </div>
         </div>
 
@@ -66,14 +66,14 @@
           <textarea class="input-text" name="q2-description" id="q2-description" placeholder="Type a question" required><%= quiz[1].question %></textarea>
           <br>
           <label for="q2-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q2-answer" placeholder="Correct Answer" required value="<%= quiz[1].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q2-answer" placeholder="Correct Answer" required value="<%= quiz[1].correct_answer %>"/>
           <label for="q2-answer">Options:</label>
-          <input type="text" class="input-text" name="q2-option1" placeholder="Incorrect options" required value="<%= quiz[1].option1 %>"/>
+          <input type="text" class="input-text input" name="q2-option1" placeholder="Incorrect options" required value="<%= quiz[1].option1 %>"/>
           <div>
             <label for="q2-answer">Options:</label>
-            <input type="text" class="input-text" name="q2-option2" placeholder="Incorrect options" required value="<%= quiz[1].option2 %>"/>
+            <input type="text" class="input-text input" name="q2-option2" placeholder="Incorrect options" required value="<%= quiz[1].option2 %>"/>
             <label for="q2-answer">Options:</label>
-            <input type="text" class="input-text" name="q2-option3" placeholder="Incorrect options" required value="<%= quiz[1].option3 %>"/>
+            <input type="text" class="input-text input" name="q2-option3" placeholder="Incorrect options" required value="<%= quiz[1].option3 %>"/>
           </div>
         </div>
 
@@ -82,14 +82,14 @@
           <textarea class="input-text" name="q3-description" id="q3-description" placeholder="Type a question" required><%= quiz[2].question %></textarea>
           <br>
           <label for="q3-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q3-answer" placeholder="Correct Answer" required value="<%= quiz[2].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q3-answer" placeholder="Correct Answer" required value="<%= quiz[2].correct_answer %>"/>
           <label for="q3-answer">Options:</label>
-          <input type="text" class="input-text" name="q3-option1" placeholder="Incorrect options" required value="<%= quiz[2].option1 %>"/>
+          <input type="text" class="input-text input" name="q3-option1" placeholder="Incorrect options" required value="<%= quiz[2].option1 %>"/>
           <div>
             <label for="q3-answer">Options:</label>
-            <input type="text" class="input-text" name="q3-option2" placeholder="Incorrect options" required value="<%= quiz[2].option2 %>"/>
+            <input type="text" class="input-text input" name="q3-option2" placeholder="Incorrect options" required value="<%= quiz[2].option2 %>"/>
             <label for="q3-answer">Options:</label>
-            <input type="text" class="input-text" name="q3-option3" placeholder="Incorrect options" required value="<%= quiz[2].option3 %>"/>
+            <input type="text" class="input-text input" name="q3-option3" placeholder="Incorrect options" required value="<%= quiz[2].option3 %>"/>
           </div>
         </div>
 
@@ -98,14 +98,14 @@
           <textarea class="input-text" name="q4-description" id="q4-description" placeholder="Type a question" required><%= quiz[3].question %></textarea>
           <br>
           <label for="q4-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q4-answer" placeholder="Correct Answer" required value="<%= quiz[3].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q4-answer" placeholder="Correct Answer" required value="<%= quiz[3].correct_answer %>"/>
           <label for="q4-answer">Options:</label>
-          <input type="text" class="input-text" name="q4-option1" placeholder="Incorrect options" required value="<%= quiz[3].option1 %>"/>
+          <input type="text" class="input-text input" name="q4-option1" placeholder="Incorrect options" required value="<%= quiz[3].option1 %>"/>
           <div>
             <label for="q4-answer">Options:</label>
-            <input type="text" class="input-text" name="q4-option2" placeholder="Incorrect options" required value="<%= quiz[3].option2 %>"/>
+            <input type="text" class="input-text input" name="q4-option2" placeholder="Incorrect options" required value="<%= quiz[3].option2 %>"/>
             <label for="q4-answer">Options:</label>
-            <input type="text" class="input-text" name="q4-option3" placeholder="Incorrect options" required value="<%= quiz[3].option3 %>"/>
+            <input type="text" class="input-text input" name="q4-option3" placeholder="Incorrect options" required value="<%= quiz[3].option3 %>"/>
           </div>
         </div>
 
@@ -114,14 +114,14 @@
           <textarea class="input-text" name="q5-description" id="q5-description" placeholder="Type a question" required><%= quiz[4].question %></textarea>
           <br>
           <label for="q5-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q5-answer" placeholder="Correct Answer" required value="<%= quiz[4].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q5-answer" placeholder="Correct Answer" required value="<%= quiz[4].correct_answer %>"/>
           <label for="q5-answer">Options:</label>
-          <input type="text" class="input-text" name="q5-option1" placeholder="Incorrect options" required value="<%= quiz[4].option1 %>"/>
+          <input type="text" class="input-text input" name="q5-option1" placeholder="Incorrect options" required value="<%= quiz[4].option1 %>"/>
           <div>
             <label for="q5-answer">Options:</label>
-            <input type="text" class="input-text" name="q5-option2" placeholder="Incorrect options" required value="<%= quiz[4].option2 %>"/>
+            <input type="text" class="input-text input" name="q5-option2" placeholder="Incorrect options" required value="<%= quiz[4].option2 %>"/>
             <label for="q5-answer">Options:</label>
-            <input type="text" class="input-text" name="q5-option3" placeholder="Incorrect options" required value="<%= quiz[4].option3 %>"/>
+            <input type="text" class="input-text input" name="q5-option3" placeholder="Incorrect options" required value="<%= quiz[4].option3 %>"/>
           </div>
         </div>
 
@@ -130,14 +130,14 @@
           <textarea class="input-text" name="q6-description" id="q6-description" placeholder="Type a question" required><%= quiz[5].question %></textarea>
           <br>
           <label for="q6-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q6-answer" placeholder="Correct Answer" required value="<%= quiz[5].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q6-answer" placeholder="Correct Answer" required value="<%= quiz[5].correct_answer %>"/>
           <label for="q6-answer">Options:</label>
-          <input type="text" class="input-text" name="q6-option1" placeholder="Incorrect options" required value="<%= quiz[5].option1 %>"/>
+          <input type="text" class="input-text input" name="q6-option1" placeholder="Incorrect options" required value="<%= quiz[5].option1 %>"/>
           <div>
             <label for="q6-answer">Options:</label>
-            <input type="text" class="input-text" name="q6-option2" placeholder="Incorrect options" required value="<%= quiz[5].option2 %>"/>
+            <input type="text" class="input-text input" name="q6-option2" placeholder="Incorrect options" required value="<%= quiz[5].option2 %>"/>
             <label for="q6-answer">Options:</label>
-            <input type="text" class="input-text" name="q6-option3" placeholder="Incorrect options" required value="<%= quiz[5].option3 %>"/>
+            <input type="text" class="input-text input" name="q6-option3" placeholder="Incorrect options" required value="<%= quiz[5].option3 %>"/>
           </div>
         </div>
 
@@ -146,14 +146,14 @@
           <textarea class="input-text" name="q7-description" id="q7-description" placeholder="Type a question" required><%= quiz[6].question %></textarea>
           <br>
           <label for="q7-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q7-answer" placeholder="Correct Answer" required value="<%= quiz[6].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q7-answer" placeholder="Correct Answer" required value="<%= quiz[6].correct_answer %>"/>
           <label for="q7-answer">Options:</label>
-          <input type="text" class="input-text" name="q7-option1" placeholder="Incorrect options" required value="<%= quiz[6].option1 %>"/>
+          <input type="text" class="input-text input" name="q7-option1" placeholder="Incorrect options" required value="<%= quiz[6].option1 %>"/>
           <div>
             <label for="q7-answer">Options:</label>
-            <input type="text" class="input-text" name="q7-option2" placeholder="Incorrect options" required value="<%= quiz[6].option2 %>"/>
+            <input type="text" class="input-text input" name="q7-option2" placeholder="Incorrect options" required value="<%= quiz[6].option2 %>"/>
             <label for="q7-answer">Options:</label>
-            <input type="text" class="input-text" name="q7-option3" placeholder="Incorrect options" required value="<%= quiz[6].option3 %>"/>
+            <input type="text" class="input-text input" name="q7-option3" placeholder="Incorrect options" required value="<%= quiz[6].option3 %>"/>
           </div>
         </div>
 
@@ -162,14 +162,14 @@
           <textarea class="input-text" name="q8-description" id="q8-description" placeholder="Type a question" required><%= quiz[7].question %></textarea>
           <br>
           <label for="q8-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q8-answer" placeholder="Correct Answer" required value="<%= quiz[7].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q8-answer" placeholder="Correct Answer" required value="<%= quiz[7].correct_answer %>"/>
           <label for="q8-answer">Options:</label>
-          <input type="text" class="input-text" name="q8-option1" placeholder="Incorrect options" required value="<%= quiz[7].option1 %>"/>
+          <input type="text" class="input-text input" name="q8-option1" placeholder="Incorrect options" required value="<%= quiz[7].option1 %>"/>
           <div>
             <label for="q8-answer">Options:</label>
-            <input type="text" class="input-text" name="q8-option2" placeholder="Incorrect options" required value="<%= quiz[7].option2 %>"/>
+            <input type="text" class="input-text input" name="q8-option2" placeholder="Incorrect options" required value="<%= quiz[7].option2 %>"/>
             <label for="q8-answer">Options:</label>
-            <input type="text" class="input-text" name="q8-option3" placeholder="Incorrect options" required value="<%= quiz[7].option3 %>"/>
+            <input type="text" class="input-text input" name="q8-option3" placeholder="Incorrect options" required value="<%= quiz[7].option3 %>"/>
           </div>
         </div>
 
@@ -178,14 +178,14 @@
           <textarea class="input-text" name="q9-description" id="q9-description" placeholder="Type a question" required><%= quiz[8].question %></textarea>
           <br>
           <label for="q9-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q9-answer" placeholder="Correct Answer" required value="<%= quiz[8].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q9-answer" placeholder="Correct Answer" required value="<%= quiz[8].correct_answer %>"/>
           <label for="q9-answer">Options:</label>
-          <input type="text" class="input-text" name="q9-option1" placeholder="Incorrect options" required value="<%= quiz[8].option1 %>"/>
+          <input type="text" class="input-text input" name="q9-option1" placeholder="Incorrect options" required value="<%= quiz[8].option1 %>"/>
           <div>
             <label for="q9-answer">Options:</label>
-            <input type="text" class="input-text" name="q9-option2" placeholder="Incorrect options" required value="<%= quiz[8].option2 %>"/>
+            <input type="text" class="input-text input" name="q9-option2" placeholder="Incorrect options" required value="<%= quiz[8].option2 %>"/>
             <label for="q9-answer">Options:</label>
-            <input type="text" class="input-text" name="q9-option3" placeholder="Incorrect options" required value="<%= quiz[8].option3 %>"/>
+            <input type="text" class="input-text input" name="q9-option3" placeholder="Incorrect options" required value="<%= quiz[8].option3 %>"/>
           </div>
         </div>
 
@@ -194,14 +194,14 @@
           <textarea class="input-text" name="q10-description" id="q10-description" placeholder="Type a question" required><%= quiz[9].question %></textarea>
           <br>
           <label for="q10-answer">Correct Answer:</label>
-          <input type="text" class="input-text" name="q10-answer" placeholder="Correct Answer" required value="<%= quiz[9].correct_answer %>"/>
+          <input type="text" class="input-text input" name="q10-answer" placeholder="Correct Answer" required value="<%= quiz[9].correct_answer %>"/>
           <label for="q10-answer">Options:</label>
-          <input type="text" class="input-text" name="q10-option1" placeholder="Incorrect options" required value="<%= quiz[9].option1 %>"/>
+          <input type="text" class="input-text input" name="q10-option1" placeholder="Incorrect options" required value="<%= quiz[9].option1 %>"/>
           <div>
             <label for="q10-answer">Options:</label>
-            <input type="text" class="input-text" name="q10-option2" placeholder="Incorrect options" required value="<%= quiz[9].option2 %>"/>
+            <input type="text" class="input-text input" name="q10-option2" placeholder="Incorrect options" required value="<%= quiz[9].option2 %>"/>
             <label for="q10-answer">Options:</label>
-            <input type="text" class="input-text" name="q10-option3" placeholder="Incorrect options" required value="<%= quiz[9].option3 %>"/>
+            <input type="text" class="input-text input" name="q10-option3" placeholder="Incorrect options" required value="<%= quiz[9].option3 %>"/>
           </div>
         </div>
 
