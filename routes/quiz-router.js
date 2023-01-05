@@ -48,6 +48,10 @@ router.post('/new', (req, res) => {
         };
         quizQueries.addQuestion(questionData)
       }
+    })
+    .catch((err) => {
+      console.log('post addQuiz error', err.message);
+      return null;
     });
   res.redirect('/account');
 });
@@ -59,6 +63,10 @@ router.get('/edit/:id', (req, res) => {
       console.log(quiz);
       const templateVars = { quiz };
       res.render('edit-quiz', templateVars);
+    })
+    .catch((err) => {
+      console.log('POST edit/id error', err.message);
+      return null;
     });
 });
 
@@ -68,6 +76,10 @@ router.get('/public', (req, res) => {
     .then((response) => {
       const quizzes = response.rows;
       res.render('public-quizzes', {quizzes})
+    })
+    .catch((err) => {
+      console.log('GET /public error', err.message);
+      return null;
     });
 });
 
@@ -80,6 +92,10 @@ router.get('/my-quizzes', (req, res) => {
       console.log('response.log', response.rows)
       const quizzes = response.rows;
       res.render('my-quizzes', {quizzes})
+    })
+    .catch((err) => {
+      console.log('GET my quizzes error', err.message);
+      return null;
     });
 });
 
@@ -111,6 +127,10 @@ router.post('/edit/:id', (req, res) => {
         console.log('edit in quiz router', questionData);
         quizQueries.editQuestion(questionData);
       }
+    })
+    .catch((err) => {
+      console.log('POST /quiz/edit/id error', err.message);
+      return null;
     });
   res.redirect('/account');
 });
