@@ -1,0 +1,3 @@
+INSERT INTO scores (score)
+VALUES (9)
+RETURNING *;

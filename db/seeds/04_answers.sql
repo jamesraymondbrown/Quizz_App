@@ -1,2 +1,0 @@
--- INSERT INTO answers (user_id, quiz_id, q_number, user_answer)
--- VALUES ('James', 'james@james.com', '$2a$10$LGkmNfTLnlTQQbc1I9dc0usUlg4nzvU890xMV2Vhy.V7n0rfCHwxO');
