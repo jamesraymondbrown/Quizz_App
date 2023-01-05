@@ -48,6 +48,10 @@ body {
   border: 4px solid black;
   border-radius: 14px;
   background-color: lightgray;
+  max-width: 420px;
+  max-height: 320px;
+  width: 85vw;
+  height: 40vh;
   margin: 4px;
   padding: 16px;
 }
@@ -64,6 +68,17 @@ body {
 
 #account-table {
   margin: auto;
+}
+
+.account-page-image {
+  max-width: 300px;
+  max-height: 200px;
+  width: 75vw;
+  height: 25vh;
+}
+
+.account-btn {
+  margin-top: 10px;
 }
 
 @media all and (min-width: 1024px) {
@@ -90,8 +105,10 @@ body {
   .account-table-row {
     position: relative;
     margin: auto;
-    width: 40vw;
-    height: 30vh;
+    max-width: 850px;
+    max-height: 500px;
+    width: 36vw;
+    height: 36vh;
   }
 
   #account-page-title {
@@ -99,8 +116,11 @@ body {
     margin-bottom: 40px;
   }
 
-  .btn-nolist {
-    margin-top: 10vh
+  .account-page-image {
+    width: 26vw;
+    height: 26vh;
+    max-width: 700px;
+    max-height: 420px;
   }
 
 }

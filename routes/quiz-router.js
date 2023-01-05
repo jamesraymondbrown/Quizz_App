@@ -66,6 +66,7 @@ router.get('/my-quizzes', (req, res) => {
     return res.redirect('/login');
   } db.query(`SELECT * FROM quizzes WHERE user_id = ${req.session.userId}`)
     .then((response) => {
+      console.log('response.log', response.rows)
       const quizzes = response.rows;
       res.render('my-quizzes', {quizzes})
     });
