@@ -23,7 +23,11 @@
   <body>
     <%- include('partials/_header') %>
     <h3 id="account-page-title">
-      Welcome, <%= templateVars[0].user_name %>
+      <% if (templateVars[0] !== undefined) { %>
+        Welcome, <%= templateVars[0].user_name %>
+      <% } else { %>
+        Welcome, friend!
+      <% } %>
     </h3>
       <table id="account-table">
         <tbody id="account-table-body">
