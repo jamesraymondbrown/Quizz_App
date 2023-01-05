@@ -23,27 +23,29 @@
   <body>
     <%- include('partials/_header') %>
     <h3 id="account-page-title">
-      Welcome, *Username*
+      Welcome, <%= templateVars[0].user_name %>
     </h3>
       <table id="account-table">
         <tbody id="account-table-body">
           <tr class="account-table-row">
-            <th class="account-table-text-header">Create a new quiz:</th>
-            <th><a href="/quiz/new"><button class="btn btn-primary btn-sm btn-nolist account-btn">Click here to create a new quiz</button></a></th>
+            <!-- <th class="account-table-text-header">Create a new quiz:</th> -->
+            <td><img class="account-page-image" src="https://variety.com/wp-content/uploads/2018/08/alex-trebek-jeopardy.jpg" alt="New quiz picture" /></td>
+            <th><a href="/quiz/new"><button class="btn btn-primary btn-med btn-nolist account-btn">Create a new quiz</button></a></th>
           </tr>
           <tr class="account-table-row">
-            <th class="account-table-text-header">Your created quizzes:</th>
-            <th class="account-table-link-list"><a href="/new-quiz">Add JS to list quizzes with their user id</a></th>
-            <th><a href="/all-quizzes"><button class="btn btn-primary btn-sm account-btn">Button to view my quizzes</button></a></th>
+            <!-- <th class="account-table-text-header">Your created quizzes:</th> -->
+            <td><img class="account-page-image" src="https://www.rollingstone.com/wp-content/uploads/2020/11/alex-trebek-obit.jpg" alt="Your quizzes picture" /></td>
+            <th><a href="/quiz/my-quizzes"><button class="btn btn-primary btn-med account-btn">View your created quizzes</button></a></th>
           </tr>
           <tr class="account-table-row">
-            <th class="account-table-text-header">Your quiz results:</th>
-            <th class="account-table-link-list"><a href="/new-quiz">Add JS to list quiz results</a></th>
-            <th><a href="/all-quizzes"><button class="btn btn-primary btn-sm account-btn">Button to view all quiz results</button></a></th>
+            <!-- <th class="account-table-text-header">Your quiz results:</th> -->
+            <td><img class="account-page-image" src="https://www.indiewire.com/wp-content/uploads/2020/11/Alex-Trebek-Jeopardy.jpg" alt="Your quiz results picture" /></td>
+            <th><a href="/all-quizzes"><button class="btn btn-primary btn-med account-btn">View your quiz scores</button></a></th>
           </tr>
           <tr class="account-table-row">
-            <th class="account-table-text-header">View public quizzes</th>
-            <th><a href="/public-quizzes"><button class="btn btn-primary btn-sm btn-nolist account-btn">Button to view public quizzes</button></a></th>
+            <!-- <th class="account-table-text-header">View public quizzes</th> -->
+            <td><img class="account-page-image" src="https://pyxis.nymag.com/v1/imgs/66b/ba3/064ec3b41242a82ec2e04f4a7841e4d5c9-norm-macdonald-snl-jeopardy.2x.rsocial.w600.jpg" alt="View public quizzes picture" /></td>
+            <th><a href="/quiz/public"><button class="btn btn-primary btn-med btn-nolist account-btn">View public quizzes</button></a></th>
           </tr>
 
           <!-- can copy from tinyapp account page to find out how to display all their created quizzes (it's similar to displaying their created links) -->

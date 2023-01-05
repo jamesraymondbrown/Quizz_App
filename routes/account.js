@@ -7,6 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
+const db = require('../db/connection');
 
 router.use((req, res, next) => {
   if (!req.session.userId) {
@@ -17,28 +18,24 @@ router.use((req, res, next) => {
 })
 
 router.get("/", (req, res) => {
-  const templateVars = {
-    //user: users[req.session.user_id]
-  };
-  // if (req.session.user_id !== undefined) {
-  //   res.redirect("/urls");
-  // }
-  res.render('account', templateVars);
+  // console.log('userIDlog', req.session.userId);
+  db.query(`SELECT quizzes.name AS quiz_name, quizzes.id AS quiz_id, users.name AS user_name, users.id AS user_id FROM quizzes
+    JOIN users ON users.id = user_id
+    WHERE user_id = ${req.session.userId};`)
+    .then((response) => {
+      const templateVars = response.rows;
+      console.log('varsLog', templateVars);
+      res.render('account', {templateVars});
+    })
+    .catch((err) => {
+      console.log('accountRouteErrorMessage', err.message);
+      return null;
+    });
+  //res.render('account', templateVars);
 });
 
-// router.post("/", (req, res) => {
-//   const userEmail = req.body.email;
-//   const password = req.body.password;
-//   const userID = getUserByEmail(userEmail, users);
-//   if (getUserByEmail(req.body.email, users) === null) {
-//     res.status(403).send("User not found!");
-//   } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
-//     let loginUserID = getUserByEmail(userEmail, users);
-//     req.session.user_id = users[loginUserID].id;
-//     res.redirect(`/urls`);
-//   } else {
-//     res.status(403).send("Incorrect Password!");
-//   }
-// });
+// = ${req.session.userId}
+// where user.id = ${req.session.userId};
+
 
 module.exports = router;
