@@ -22,21 +22,29 @@
   <nav class="navbar">
     <a href="/" class="nav-branding">Quiz app</a>
     <ul class="nav-menu">
+      <% if(!user){%>
       <li class="nav-item">
         <a href="/login" class="nav-link">Login</a>
       </li>
       <li class="nav-item">
-        <a href="/logout" class="nav-link">Logout</a>
+        <a href="/register" class="nav-link">Register</a>
+      </li>
+      <%} else if(user){%>
+      <li class="nav-item">
+        <a href="/logout" method="POST" class="nav-link">Logout</a>
       </li>
       <li class="nav-item">
         <a href="/account" class="nav-link">Account</a>
       </li>
+      <%}%>
       <li class="nav-item">
-        <a href="public-quizzes" class="nav-link">Public Quizzes</a>
+        <a href="/public-quizzes" class="nav-link">Public Quizzes</a>
       </li>
+      <% if(user){%>
       <li class="nav-item">
         <a href="quiz/new" class="nav-link">New quiz</a>
       </li>
+      <%}%>
     </ul>
     <div class="hamburger">
       <span class="bar"></span>

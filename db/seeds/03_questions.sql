@@ -8,3 +8,14 @@ INSERT INTO questions (qnumber, question, correct_answer, option1, option2, opti
 INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (8, 'Question 8', 'Answer 8', 'Option 8-1', 'Option 8-2', 'Option 8-3', 1);
 INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (9, 'Question 9', 'Answer 9', 'Option 9-1', 'Option 9-2', 'Option 9-3', 1);
 INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (10, 'Question 10', 'Answer 10', 'Option 10-1', 'Option 10-2', 'Option 10-3', 1);
+
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (1, 'What caused the downfall of the jedi order?', 'The jedi order', 'Anakin Skywalker', 'Palpatine', 'Yoda', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (2, 'How did Obi Wan manage to defeat Anakin despite Anakin being more powerful?', 'High Ground', 'Death Sticks', 'High Ground', 'His lightsaber was better', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (3, 'Who is a more passionate lover?', 'Dex the male Besalisk', 'Jabba The Hutt', 'Qui-gon', 'Yoda', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (4, 'How did Darth Sidious beat Mace Windu?', 'Anakin intervened', 'Because Sidious was stronger', 'Mace Windu tripped and fell', 'Mace Windu had an eyelash in his eye', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (5, 'Who had the highest midichlorian count?', 'Anakin Skywalker', 'Darth Sidious', 'Yoda', 'Qui-Gon', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (6, 'Who is Darth Sidious', 'Chancellor Palpatine', 'Chancellor Velorum', 'Savage Opress', 'Barriss Offee', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (7, 'Who was Anakin Skywalkers father?', 'The Force', 'Obi-Wan Kenobi', 'Qui-Gon', 'Chancellor Palpatine', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (8, 'Who killed Qui-Gon?', 'Darth Maul', 'Darth Vader', 'Darth Sidious', 'Count Dooku', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (9, 'Why does Mace Windu have a purple lightsaber?', 'Samuel Jackson wanted one', 'Light and dark combined', 'Purple Kyber Crystal', 'Because he is evil', 2);
+INSERT INTO questions (qnumber, question, correct_answer, option1, option2, option3, quiz_id) VALUES (10, 'What is the best Star Wars movie?', 'Revenge Of The Sith', 'The Empire Strikes Back', 'A New Hope', 'Rogue One', 2);
