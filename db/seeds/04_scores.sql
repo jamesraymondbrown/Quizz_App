@@ -1,3 +1,3 @@
-INSERT INTO scores (score)
-VALUES (9)
-RETURNING *;
+-- INSERT INTO scores (score)
+-- VALUES (9)
+-- RETURNING *;
