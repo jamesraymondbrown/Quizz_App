@@ -48,6 +48,7 @@ const quizTakerRoutes = require('./routes/quiz-taker');
 
 const accountRoutes = require('./routes/account');
 const quizResultsRoutes = require('./routes/quiz-results');
+const db = require('./db/connection');
 
 
 
@@ -95,7 +96,22 @@ app.use('/quiztaker', quizTakerRoutes);
 // });
 
 app.get('/', (req, res) => {
-  res.render('index');
+  db.query(`SELECT quizzes.name AS quiz_name, quizzes.id AS quiz_id
+  FROM quizzes
+  WHERE quizzes.private = false;`)
+  .then((response) => {
+    const templateVars = {
+      quiz: response.rows,
+    }
+    console.log('varsLog', templateVars);
+    console.log('varsLog.starwars!', templateVars.quiz[0].quiz_name);
+    res.render('index', templateVars);
+  })
+  .catch((err) => {
+    console.log('ERROR MESSAGE::::', err.message);
+    return null;
+  });
+
 });
 
 app.listen(PORT, () => {
