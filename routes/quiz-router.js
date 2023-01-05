@@ -60,6 +60,15 @@ router.get('/public', (req, res) => {
     });
 });
 
+// GET /quiz/my-quizzes/:id
+router.get('/public', (req, res) => {
+  // db.query('SELECT * FROM quizzes WHERE private = FALSE;')
+  //   .then((response) => {
+  //     const quizzes = response.rows;
+  //     res.render('public-quizzes', {quizzes})
+  //   });
+});
+
 // POST /quiz/edit/:id
 router.post('/edit/:id', (req, res) => {
   const quizData = {
