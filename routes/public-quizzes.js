@@ -5,22 +5,22 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const router  = express.Router();
-const db = require('../db/connection');
+// const express = require('express');
+// const router  = express.Router();
+// const db = require('../db/connection');
 
-router.get('/', (req, res) => {
-  db.query('SELECT * FROM quizzes;')
-    .then((response) => {
-      const quizzes = response.rows;
-      console.log('quizObject Log', quizzes);
-      // res.json(quizObject);
-      res.render('public-quizzes', {quizzes})
-    });
+// router.get('/', (req, res) => {
+//   db.query('SELECT * FROM quizzes;')
+//     .then((response) => {
+//       const quizzes = response.rows;
+//       console.log('quizObject Log', quizzes);
+//       // res.json(quizObject);
+//       res.render('public-quizzes', {quizzes})
+//     });
 
-    // res.render({template:'index', { user : user}}
+//     // res.render({template:'index', { user : user}}
 
-  // res.render('public-quizzes');
-});
+//   // res.render('public-quizzes');
+// });
 
-module.exports = router;
+// module.exports = router;

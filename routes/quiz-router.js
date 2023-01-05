@@ -1,6 +1,7 @@
 const express = require('express');
 const quizQueries = require('../db/queries/quiz-queries');
 const router = express.Router();
+const db = require('../db/connection');
 
 router.use((req, res, next) => {
   if (!req.session.userId) {
@@ -59,6 +60,28 @@ router.get('/edit/:id', (req, res) => {
       res.render('edit-quiz', templateVars);
     });
 });
+
+// GET /quiz/public
+router.get('/public', (req, res) => {
+  db.query('SELECT * FROM quizzes WHERE private = FALSE;')
+    .then((response) => {
+      const quizzes = response.rows;
+      res.render('public-quizzes', {quizzes})
+    });
+});
+
+// GET /quiz/my-quizzes
+router.get('/my-quizzes', (req, res) => {
+  if (!req.session.userId) {
+    return res.redirect('/login');
+  } db.query(`SELECT * FROM quizzes WHERE user_id = ${req.session.userId}`)
+    .then((response) => {
+      console.log('response.log', response.rows)
+      const quizzes = response.rows;
+      res.render('my-quizzes', {quizzes})
+    });
+});
+
 
 // POST /quiz/edit/:id
 router.post('/edit/:id', (req, res) => {
