@@ -47,7 +47,6 @@ const logoutRoutes = require('./routes/logout');
 const registerRoutes = require('./routes/register');
 const quizTakerRoutes = require('./routes/quiz-taker');
 
-
 const accountRoutes = require('./routes/account');
 const quizResultsRoutes = require('./routes/quiz-results');
 
