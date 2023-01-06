@@ -28,7 +28,6 @@
         <thead>
           <tr>
             <th scope="col">Quiz Name</th>
-            <th scope="col">My quiz result</th>
             <th scope="col">Take quiz</th>
           </tr>
         </thead>
@@ -37,11 +36,6 @@
           <% for (const quiz of quizzes) { %>
             <tr>
               <td><%= quiz.name %></td>
-              <td><% if (quiz.score !== null && quiz.score !== undefined) { %>
-                <%= quiz.score %>
-                <% } else {%>
-                Quiz not taken yet
-                <% }; %> </td>
               <td>
                 <a href="/quiztaker/<%=quiz.id%>">
                   <button type="submit" class="btn btn-primary">Take quiz</button>
