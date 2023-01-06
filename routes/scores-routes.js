@@ -19,7 +19,6 @@ const scoreCounter = (answersArray, quizData) => {
       }
     }
   }
-  console.log('scorelog', score);
   return score
 };
 
@@ -43,9 +42,9 @@ router.get('/', (req, res) => {
     return db.query(`SELECT * FROM scores ORDER BY ID DESC LIMIT 1`);
   })
   .then((response) => {
-    console.log('Insert Query Response in scores-routes', response.rows);
-    const currentUserScoreId = response.rows[0].id
-    res.redirect(`/scores/${currentUserScoreId}`)
+    console.log('new_attempt_score', response.rows[0]);
+    const currentAttemptScoreId = response.rows[0].id
+    res.redirect(`/scores/${currentAttemptScoreId}`)
   })
   .catch((err) => {
     console.log('get/answers error', err.message);
@@ -60,7 +59,6 @@ router.get('/:id', (req, res) => {
   .then((response) => {
     scoreData = response.rows[0];
     res.render('results', {scoreData});
-    console.log('responselog69', scoreData);
   })
   .catch((err) => {
     console.log('get/answers error', err.message);
