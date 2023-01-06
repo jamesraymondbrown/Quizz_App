@@ -83,7 +83,7 @@ router.get('/public', (req, res) => {
     });
 });
 
-router.get('/my-quiz-results', (req, res) => {
+router.get('/my-quiz-scores', (req, res) => {
   db.query(`SELECT scores.user_id AS user_id, user_score, quiz_id, quizzes.name AS quiz_name
   FROM scores
   JOIN quizzes ON quiz_id = quizzes.id
