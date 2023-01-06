@@ -23,33 +23,28 @@
   <body>
     <%- include('partials/_header') %>
     <main style="margin: 1em;">
-      <h3>My quizzes</h3>
+      <h3>My quiz scores</h3>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">Quiz Name</th>
             <th scope="col">My quiz score</th>
-            <th scope="col">View detailed quiz results</th>
             <th scope="col">Re-take quiz</th>
           </tr>
         </thead>
         <tbody>
           <!-- Make a for loop that fetches the quiz info and displays them. Use tinyapp's urls_index for guidance. Like this: https://share.getcloudapp.com/JruynGqd -->
-
+          <% for (const score of scores) { %>
             <tr>
-              <td>js to pull quiz name</td>
-              <td>js to pull my quiz results</td>
+              <td><%= score.quiz_name%></td>
+              <td><%= score.user_score%></td>
               <td>
-                <a href="/urls/useJSToCopyQuizResultsPageLink">
-                  <button type="submit" class="btn btn-primary">View quiz results page</button>
-                </a>
-              </td>
-              <td>
-                <a href="/urls/useJSToFetchQuizURL">
-                  <button type="submit" class="btn btn-primary">Take quiz</button>
+                <a href="/quiztaker/<%=score.quiz_id%>">
+                  <button type="submit" class="btn btn-primary">Re-take quiz</button>
                 </a>
               </td>
             </tr>
+          <% } %>
         </tbody>
       </table>
     </main>
