@@ -71,6 +71,15 @@ router.get('/public', (req, res) => {
     });
 });
 
+router.get('/my-quiz-results', (req, res) => {
+  db.query(`SELECT * FROM scores WHERE user_id = ${req.session.userId}`)
+    .then((response) => {
+      console.log('my-results-log', response.rows);
+      const quizzes = response.rows;
+      res.render('my-quiz-results', {quizzes})
+    });
+});
+
 // GET /quiz/my-quizzes
 router.get('/my-quizzes', (req, res) => {
   if (!req.session.userId) {
