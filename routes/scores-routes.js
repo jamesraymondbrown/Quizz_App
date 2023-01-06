@@ -52,6 +52,33 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+  console.log('post req.body', req.body);
+  const answersArray = [2, 'A band from Liverpool', 'John and George', 'He was ugly', 'Yellow', 'Mop-tops', 'We will never know for sure', 'Apple records', 'Jesus', 'George', 'The other ones are dead'];
+
+  const userId = req.session.userId;
+
+  return db.query(`SELECT * FROM questions WHERE quiz_id = ${answersArray[0]}`)
+  .then((response) => {
+    const quizData = response.rows;
+    const score = scoreCounter(answersArray, quizData)
+    return db.query(`INSERT INTO scores (user_score, quiz_id, user_id)
+    VALUES ($1, $2, $3);`, [score, answersArray[0], userId]);
+  })
+  .then((response) => {
+    return db.query(`SELECT * FROM scores ORDER BY ID DESC LIMIT 1`);
+  })
+  .then((response) => {
+    console.log('new_attempt_score', response.rows[0]);
+    const currentAttemptScoreId = response.rows[0].id
+    res.redirect(`/scores/${currentAttemptScoreId}`)
+  })
+  .catch((err) => {
+    console.log('get/answers error', err.message);
+    return null;
+  });
+});
+
 
 router.get('/:id', (req, res) => {
 

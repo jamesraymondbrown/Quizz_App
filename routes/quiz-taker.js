@@ -30,6 +30,7 @@ router.get('/:id', (req, res) => {
       const templateVars = {
         quiz: response.rows,
       };
+      console.log('response rows', response.rows);
       console.log('varsLog', templateVars);
       console.log('varsLog.starwars!', templateVars.quiz[0].name);
       res.render('quiz', templateVars);
