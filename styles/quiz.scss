@@ -74,15 +74,19 @@ h3 {
   padding: 0.8em 2.2em;
   border-radius: 5px;
   background-color: aqua;
+
 }
 .dynamic-button:hover{
   cursor:pointer;
+  box-shadow: 1px 1px 10px rgb(183, 182, 182);
 }
 
 .answer-tracker {
   position: fixed;
   top: 90vh;
   left: 3vw;
+
+  display:none;
 }
 
 .title-block {
@@ -128,7 +132,9 @@ h3 {
 }
 .possible-answer:hover{
   cursor: pointer;
+  box-shadow: 1px 1px 10px rgb(183, 182, 182);
 }
+
 
 .possible-answer h2 {
   overflow: hidden;

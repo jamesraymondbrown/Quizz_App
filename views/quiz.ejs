@@ -32,7 +32,7 @@
           </h2>
         </div>
         <div class="answer-options">
-          <div class="possible-answer">
+          <div onclick="" class="possible-answer">
             <h2 class="possible-answerh2">
               <%=quiz[0].option3 %>
             </h2>
@@ -320,8 +320,8 @@
           <%= quiz[0].description%>
         </h3>
       </div>
-      <a class="dynamic-button">
-        <h2>button</h2>
+      <a class="dynamic-button" href="http://localhost:8080/scores">
+        <h2>Submit</h2>
       </a>
       <div class="answer-tracker">
         <h1>0/10</h1>
@@ -329,41 +329,70 @@
     </div>
 
     <script>
-      const questions = <%-JSON.stringify(quiz) %>;
-      const answers = [questions[0].correct_answer, questions[1].correct_answer, questions[2].correct_answer, questions[3].correct_answer, questions[4].correct_answer, questions[5].correct_answer, questions[6].correct_answer, questions[7].correct_answer, questions[8].correct_answer, questions[9].correct_answer];
-      const unansweredQuestions = [];//[questions[0].id, questions[1].id, questions[2].id, questions[3].id, questions[4].id, questions[5].id, questions[6].id, questions[7].id, questions[8].id, questions[9].id, ];
-      const chosenAnswers = [];
-      const possibleAnswers = document.getElementsByClassName('possible-answerh2');
-      console.log(possibleAnswers)
-      const handleClick = (questionID, chosenAnswer) => {
-        if (unansweredQuestions.includes(questionID))
-          chosenAnswers.push(chosenAnswer);
-        const itemToRemove = unansweredQuestions.indexOf(questionID);
-        if (itemToRemove > -1) {
-          unansweredQuestions.splice(itemToRemove, 1);
-        };
-        //console.log(chosenAnswers);
-        //console.log(unansweredQuestions);
-        //console.log(answerBlock.textContent);
-      };
-      const populateQuestions = () => {
-        questions.forEach(question => {
-          unansweredQuestions.push(question.id);
-            for (i = 0; i< possibleAnswers.length; i++) {
-              const answerBlock = document.getElementsByClassName('possible-answerh2');
+    const clickedNumbers = [];
+    function getValue(e) {
+      const divValue = parseInt(e.target.textContent);
+      clickedNumbers.push(divValue);
+      console.log(clickedNumbers);
+    }
+    function numberTrack() {
+      const items = document.getElementsByClassName('possible-answer');
+      for (let i = 0; i < items.length; i++) {
+        items[i].onclick = getValue;
+        console.log('clicked');
+      }
+    }
 
-              possibleAnswers[i].addEventListener('click', () => handleClick(question.id, possibleAnswers[i].textContent));
-          };
-        });
-      };
-       populateQuestions();
 
-      //console.log(questions)
-     //  for (i = 0; i< possibleAnswers.length; i++) {
-    //   possibleAnswers[i].addEventListener('click', () => {
-    //     handleClick(questions[i].id, questions[i].question)
-    //   });
-    //  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //   const questions = <%-JSON.stringify(quiz) %>;
+    //   const answers = [questions[0].correct_answer, questions[1].correct_answer, questions[2].correct_answer, questions[3].correct_answer, questions[4].correct_answer, questions[5].correct_answer, questions[6].correct_answer, questions[7].correct_answer, questions[8].correct_answer, questions[9].correct_answer];
+    //   const unansweredQuestions = [];//[questions[0].id, questions[1].id, questions[2].id, questions[3].id, questions[4].id, questions[5].id, questions[6].id, questions[7].id, questions[8].id, questions[9].id, ];
+    //   const chosenAnswers = [];
+    //   const possibleAnswers = document.getElementsByClassName('possible-answerh2');
+    //   console.log(possibleAnswers)
+    //   const handleClick = (questionID, chosenAnswer) => {
+    //     if (unansweredQuestions.includes(questionID))
+    //       chosenAnswers.push(chosenAnswer);
+    //     const itemToRemove = unansweredQuestions.indexOf(questionID);
+    //     if (itemToRemove > -1) {
+    //       unansweredQuestions.splice(itemToRemove, 1);
+    //     };
+    //     //console.log(chosenAnswers);
+    //     //console.log(unansweredQuestions);
+    //     //console.log(answerBlock.textContent);
+    //   };
+    //   const populateQuestions = () => {
+    //     questions.forEach(question => {
+    //       unansweredQuestions.push(question.id);
+    //         for (i = 0; i< possibleAnswers.length; i++) {
+    //           const answerBlock = document.getElementsByClassName('possible-answerh2');
+
+    //           possibleAnswers[i].addEventListener('click', () => handleClick(question.id, possibleAnswers[i].textContent));
+    //       };
+    //     });
+    //   };
+    //    populateQuestions();
+
+    //   //console.log(questions)
+    //  //  for (i = 0; i< possibleAnswers.length; i++) {
+    // //   possibleAnswers[i].addEventListener('click', () => {
+    // //     handleClick(questions[i].id, questions[i].question)
+    // //   });
+    // //  }
     </script>
 </body>
 
