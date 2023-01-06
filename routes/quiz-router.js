@@ -91,7 +91,7 @@ router.get('/my-quiz-scores', (req, res) => {
     .then((response) => {
       console.log('my-results-log', response.rows);
       const scores = response.rows;
-      res.render('my-quiz-results', {scores})
+      res.render('my-quiz-scores', {scores})
     });
 });
 
