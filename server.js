@@ -45,9 +45,8 @@ const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
 const registerRoutes = require('./routes/register');
 const quizTakerRoutes = require('./routes/quiz-taker');
-
+const scoresRoutes = require('./routes/scores-routes');
 const accountRoutes = require('./routes/account');
-const quizResultsRoutes = require('./routes/quiz-results');
 const db = require('./db/connection');
 
 
@@ -63,37 +62,12 @@ app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
 app.use('/register', registerRoutes);
 app.use('/account', accountRoutes);
-app.use('/quiz-results', quizResultsRoutes);
+app.use('/scores', scoresRoutes);
 // Note: mount other resources here, using the same pattern above
 app.use('/quiztaker', quizTakerRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-// app.get("/login", (req, res) => {
-//   const templateVars = {
-//     //user: users[req.session.user_id]
-//   };
-//   // if (req.session.user_id !== undefined) {
-//   //   res.redirect("/urls");
-//   // }
-//   res.render("login", templateVars);
-// });
-
-// app.post("/login", (req, res) => {
-//   const userEmail = req.body.email;
-//   const password = req.body.password;
-//   const userID = getUserByEmail(userEmail, users);
-//   if (getUserByEmail(req.body.email, users) === null) {
-//     res.status(403).send("User not found!");
-//   } if (checkUsersPassword(password) === true || bcrypt.compareSync(password, users[userID].password) === true) {
-//     let loginUserID = getUserByEmail(userEmail, users);
-//     req.session.user_id = users[loginUserID].id;
-//     res.redirect(`/urls`);
-//   } else {
-//     res.status(403).send("Incorrect Password!");
-//   }
-// });
 
 app.get('/', (req, res) => {
   db.query(`SELECT quizzes.name AS quiz_name, quizzes.id AS quiz_id

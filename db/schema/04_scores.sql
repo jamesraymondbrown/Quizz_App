@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS scores CASCADE;
+CREATE TABLE scores (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_score INTEGER NOT NULL,
+  quiz_id INTEGER REFERENCES quizzes(id) NOT NULL,
+  user_id INTEGER REFERENCES users(id) NOT NULL
+);

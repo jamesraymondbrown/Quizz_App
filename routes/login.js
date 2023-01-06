@@ -14,9 +14,9 @@ router.get("/", (req, res) => {
   // const templateVars = {
   //   //user: users[req.session.user_id]
   // };
-  db.query(`SELECT * FROM users`)
+  db.query(`SELECT * FROM scores`)
   .then((response) => {
-    console.log('responseLog', response.rows)
+    console.log('loginPageResponseLog', response.rows)
     res.render('login');
   });
 });

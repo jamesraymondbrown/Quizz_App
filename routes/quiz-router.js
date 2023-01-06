@@ -83,6 +83,18 @@ router.get('/public', (req, res) => {
     });
 });
 
+router.get('/my-quiz-results', (req, res) => {
+  db.query(`SELECT scores.user_id AS user_id, user_score, quiz_id, quizzes.name AS quiz_name
+  FROM scores
+  JOIN quizzes ON quiz_id = quizzes.id
+  WHERE scores.user_id = ${req.session.userId}`)
+    .then((response) => {
+      console.log('my-results-log', response.rows);
+      const scores = response.rows;
+      res.render('my-quiz-results', {scores})
+    });
+});
+
 // GET /quiz/my-quizzes
 router.get('/my-quizzes', (req, res) => {
   if (!req.session.userId) {
