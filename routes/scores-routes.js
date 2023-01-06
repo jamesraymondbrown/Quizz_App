@@ -23,11 +23,12 @@ const scoreCounter = (answersArray, quizData) => {
   return score
 };
 
+// Currently this GET route POSTS to the db. This route should be changed to work as the
+// quiztaker submission route, if possible. It will then redirect to the score page for
+// that recent quiz attempt
 router.get('/', (req, res) => {
 
-  const answersArray = [2, 'A band from Liverpool', 'John and George', 'He was ugly', 'Yellow', 'Mop-tops', 'We will never know for sure', 'Apple records', 'Jesus', 'George', 'The other ones are dead']
-
-  // const arrayToStoreValues = [];
+  const answersArray = [2, 'A band from Liverpool', 'John and George', 'He was ugly', 'Yellow', 'Mop-tops', 'We will never know for sure', 'Apple records', 'Jesus', 'George', 'The other ones are dead'];
 
   const userId = req.session.userId;
 
@@ -35,7 +36,6 @@ router.get('/', (req, res) => {
   .then((response) => {
     const quizData = response.rows;
     const score = scoreCounter(answersArray, quizData)
-    // arrayToStoreValues.push(score);
     return db.query(`INSERT INTO scores (user_score, quiz_id, user_id)
     VALUES ($1, $2, $3);`, [score, answersArray[0], userId]);
   })
