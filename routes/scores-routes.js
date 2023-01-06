@@ -27,31 +27,32 @@ router.get('/', (req, res) => {
 
   const answersArray = [2, 'A band from Liverpool', 'John and George', 'He was ugly', 'Yellow', 'Mop-tops', 'We will never know for sure', 'Apple records', 'Jesus', 'George', 'The other ones are dead']
 
-  const arrayToStoreValues = [];
+  // const arrayToStoreValues = [];
 
   const userId = req.session.userId;
 
-  db.query(`SELECT * FROM questions WHERE quiz_id = ${answersArray[0]}`)
+  return db.query(`SELECT * FROM questions WHERE quiz_id = ${answersArray[0]}`)
   .then((response) => {
-    console.log('response.log', response.rows)
     const quizData = response.rows;
     const score = scoreCounter(answersArray, quizData)
-    arrayToStoreValues.push(score);
-    res.render('results', {quizData, answersArray, score})
+    // arrayToStoreValues.push(score);
+    return db.query(`INSERT INTO scores (user_score, quiz_id, user_id)
+    VALUES ($1, $2, $3);`, [score, answersArray[0], userId]);
   })
   .then((response) => {
-  // console.log('queryResponseLog', arrayToStoreValues)
-  db.query(`INSERT INTO scores (user_score, quiz_id, user_id) VALUES ($1, $2, $3) RETURNING *;`, [arrayToStoreValues[0], answersArray[0], userId])
-  //   res.render('results', {quizData, answersArray, score})
+    return db.query(`SELECT * FROM scores ORDER BY ID DESC LIMIT 1`);
   })
   .then((response) => {
-    db.query(`SELECT * FROM scores`)
-    })
+    console.log('Insert Query Response in scores-routes', response.rows);
+    const currentUserScoreId = response.rows[0].id
+    res.redirect(`/scores/${currentUserScoreId}`)
+  })
   .catch((err) => {
     console.log('get/answers error', err.message);
     return null;
   });
 });
+
 
 router.get('/:id', (req, res) => {
 
@@ -66,24 +67,5 @@ router.get('/:id', (req, res) => {
     return null;
   });
 });
-
-// router.post("/", (req, res) => {
-
-//   let answersArray = [2, 'A band from Liverpool', 'John and George', 'He was ugly', 'Yellow', 'Mop-tops', 'We will never know for sure', 'Apple records', 'Jesus', 'George', 'The other ones are dead'];
-
-//   db.query(`INSERT INTO scores (score)
-//   VALUES ($1)
-//   RETURNING *;` [scoreCounter()])
-//   .then((response) => {
-//     console.log('insert query response', response.rows);
-//     // return result.rows[0];
-//     res.render('login');
-//   })
-//   .catch((err) => {
-//     console.log('addUser error', err.message);
-//     return null;
-//   });
-// });
-
 
 module.exports = router;
