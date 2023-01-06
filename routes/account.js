@@ -18,11 +18,11 @@ router.use((req, res, next) => {
 })
 
 router.get("/", (req, res) => {
-  // console.log('userIDlog', req.session.userId);
-  db.query(`SELECT quizzes.name AS quiz_name, quizzes.id AS quiz_id, users.name AS user_name, users.id AS user_id FROM quizzes
-    JOIN users ON users.id = user_id
-    WHERE user_id = ${req.session.userId};`)
+  db.query(`SELECT users.id, name
+    FROM users
+    WHERE users.id = ${req.session.userId};`)
     .then((response) => {
+      console.log(response.rows)
       const templateVars = response.rows;
       console.log('varsLog', templateVars);
       res.render('account', {templateVars});
@@ -31,11 +31,7 @@ router.get("/", (req, res) => {
       console.log('accountRouteErrorMessage', err.message);
       return null;
     });
-  //res.render('account', templateVars);
 });
-
-// = ${req.session.userId}
-// where user.id = ${req.session.userId};
 
 
 module.exports = router;

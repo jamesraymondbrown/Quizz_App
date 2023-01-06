@@ -23,8 +23,7 @@ router.get("/", (req, res) => {
 
 const getUserWithEmail = function(email) {
 
-  return db
-  .query(`SELECT * FROM users WHERE email = $1;`, [email])
+  return db.query(`SELECT * FROM users WHERE email = $1;`, [email])
   .then((response) => {
     return response.rows[0];
   })

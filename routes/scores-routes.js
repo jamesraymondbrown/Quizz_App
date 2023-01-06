@@ -8,7 +8,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db/connection');
-
+const quizQueries = require('../db/queries/quiz-queries');
 
 const scoreCounter = (answersArray, quizData) => {
   let score = 0;
